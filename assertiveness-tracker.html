@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menjadi Pribadi yang Asertif - 90 Hari Transformasi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #dee2e6;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            flex: 1;
+            padding: 15px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #6c757d;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-tab:hover {
+            background: #e9ecef;
+            color: #495057;
+        }
+
+        .nav-tab.active {
+            background: white;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .intro-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .intro-section h2 {
+            margin-bottom: 15px;
+            font-size: 2em;
+        }
+
+        .intro-section ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .intro-section li {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .phase-card {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .phase-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .phase-card h3 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .phase-card h4 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+        }
+
+        .week-item {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+        }
+
+        .week-item strong {
+            color: #495057;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .calendar-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .calendar-table td {
+            padding: 15px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .calendar-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .calendar-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .score-input {
+            width: 60px;
+            padding: 8px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .score-input:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .progress-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .progress-card h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .progress-bar-container {
+            background: #e9ecef;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            border-radius: 15px;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .success-indicator {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .success-indicator.pending {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+        }
+
+        .success-indicator::before {
+            content: "✓";
+            font-size: 1.5em;
+            margin-right: 15px;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .success-indicator.pending::before {
+            content: "⏳";
+            color: #ffc107;
+        }
+
+        .action-box {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .action-box h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .action-box p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-card h4 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        .evaluation-form {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .evaluation-question {
+            margin: 20px 0;
+        }
+
+        .evaluation-question label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #495057;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .slider {
+            flex: 1;
+            height: 8px;
+            border-radius: 5px;
+            background: #dee2e6;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+        }
+
+        .slider-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #6c757d;
+            border-top: 2px solid #dee2e6;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        .motivational-quote {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.3em;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .nav-tab {
+                font-size: 0.9em;
+                padding: 12px 10px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.9em;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌟 Menjadi Pribadi yang Asertif</h1>
+            <p>Program Transformasi Diri 90 Hari - Dari Pemalu Menjadi Percaya Diri</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="openTab('beranda')">🏠 Beranda</button>
+            <button class="nav-tab" onclick="openTab('penjelasan')">📖 Apa itu Asertif?</button>
+            <button class="nav-tab" onclick="openTab('roadmap')">🗺️ Roadmap</button>
+            <button class="nav-tab" onclick="openTab('kalender')">📅 Kalender Target</button>
+            <button class="nav-tab" onclick="openTab('progress')">📊 Tracking Progress</button>
+            <button class="nav-tab" onclick="openTab('evaluasi')">✅ Evaluasi Mingguan</button>
+        </div>
+
+        <div class="content">
+            <!-- TAB BERANDA -->
+            <div id="beranda" class="tab-content active">
+                <div class="intro-section">
+                    <h2>Selamat Datang di Perjalanan Transformasi Anda! 🚀</h2>
+                    <p>Program ini dirancang untuk membantu Anda mengembangkan kepribadian asertif dalam 90 hari. Dengan langkah-langkah praktis, terukur, dan mudah diikuti, Anda akan belajar untuk:</p>
+                    <ul>
+                        <li>Mengkomunikasikan kebutuhan dengan jelas dan tegas</li>
+                        <li>Mengatakan "tidak" tanpa merasa bersalah</li>
+                        <li>Menghargai diri sendiri dan orang lain secara seimbang</li>
+                        <li>Menghadapi konflik dengan percaya diri</li>
+                        <li>Menetapkan batasan yang sehat dalam hubungan</li>
+                    </ul>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4 id="totalDays">90</h4>
+                        <p>Hari Transformasi</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4 id="completedWeeks">0</h4>
+                        <p>Minggu Diselesaikan</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4 id="averageScore">0</h4>
+                        <p>Rata-rata Skor</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4 id="progressPercent">0%</h4>
+                        <p>Progress Keseluruhan</p>
+                    </div>
+                </div>
+
+                <div class="action-box">
+                    <h3>🎯 Mulai Sekarang!</h3>
+                    <p><strong>Action Pertama (5 Menit dari Sekarang):</strong></p>
+                    <p>Buka notes di HP Anda, tulis 1 situasi hari ini di mana Anda berkomunikasi. Tandai: Apakah pasif/agresif/asertif?</p>
+                    <button class="btn" onclick="openTab('roadmap')">Lihat Roadmap Lengkap</button>
+                </div>
+
+                <div class="motivational-quote">
+                    "Asertif bukan berarti sempurna. Ini tentang progress, bukan kesempurnaan. Setiap langkah kecil adalah kemenangan!" 
+                </div>
+            </div>
+
+            <!-- TAB PENJELASAN -->
+            <div id="penjelasan" class="tab-content">
+                <div class="intro-section">
+                    <h2>Apa itu Pribadi Asertif? 🤔</h2>
+                    <p>Pribadi asertif adalah seseorang yang mampu mengekspresikan pikiran, perasaan, kebutuhan, dan hak-haknya secara jelas, jujur, dan langsung, tanpa melanggar hak orang lain.</p>
+                </div>
+
+                <div class="phase-card">
+                    <h3>🎯 Ciri-ciri Pribadi Asertif</h3>
+                    
+                    <h4>1. Komunikasi Jelas & Langsung</h4>
+                    <div class="week-item">
+                        <p>✓ Berbicara dengan "Saya" statement: "Saya merasa...", "Saya butuh..."</p>
+                        <p>✓ Tidak berbelit-belit atau menggunakan sindiran</p>
+                        <p>✓ Menyampaikan maksud dengan tegas namun sopan</p>
+                    </div>
+
+                    <h4>2. Menghargai Diri & Orang Lain</h4>
+                    <div class="week-item">
+                        <p>✓ Percaya bahwa kebutuhan diri sama pentingnya dengan orang lain</p>
+                        <p>✓ Mendengarkan perspektif orang lain meskipun berbeda pendapat</p>
+                        <p>✓ Tidak merasa bersalah saat mengatakan "tidak"</p>
+                    </div>
+
+                    <h4>3. Kontrol Emosi yang Baik</h4>
+                    <div class="week-item">
+                        <p>✓ Tetap tenang meski dalam situasi konflik</p>
+                        <p>✓ Mengekspresikan emosi secara sehat, bukan meledak-ledak</p>
+                        <p>✓ Bahasa tubuh terbuka: kontak mata, postur tegap, nada suara stabil</p>
+                    </div>
+
+                    <h4>4. Berani Menetapkan Batasan</h4>
+                    <div class="week-item">
+                        <p>✓ Tahu kapan harus menolak permintaan yang berlebihan</p>
+                        <p>✓ Melindungi waktu dan energi pribadi</p>
+                        <p>✓ Tidak mudah dimanipulasi atau merasa terpaksa</p>
+                    </div>
+
+                    <h4>5. Bertanggung Jawab atas Keputusan</h4>
+                    <div class="week-item">
+                        <p>✓ Tidak menyalahkan orang lain</p>
+                        <p>✓ Menerima konsekuensi dari pilihan sendiri</p>
+                    </div>
+                </div>
+
+                <div class="phase-card">
+                    <h3>⚖️ Perbedaan: Pasif vs Asertif vs Agresif</h3>
+                    
+                    <h4>Pasif (Terlalu Mengalah)</h4>
+                    <div class="week-item">
+                        <p>• Tidak berani menyampaikan pendapat</p>
+                        <p>• Selalu mengatakan "ya" meski tidak mau</p>
+                        <p>• Contoh: "Tidak apa-apa..." (padahal sebenarnya kesal)</p>
+                    </div>
+
+                    <h4>✅ Asertif (Seimbang)</h4>
+                    <div class="week-item">
+                        <p>• Menyampaikan kebutuhan dengan jelas dan sopan</p>
+                        <p>• Menghargai diri sendiri dan orang lain</p>
+                        <p>• Contoh: "Saya menghargai permintaan Anda, tapi saya tidak bisa kali ini karena..."</p>
+                    </div>
+
+                    <h4>Agresif (Terlalu Memaksakan)</h4>
+                    <div class="week-item">
+                        <p>• Memaksakan kehendak tanpa peduli perasaan orang lain</p>
+                        <p>• Komunikasi kasar atau intimidatif</p>
+                        <p>• Contoh: "Kamu harus lakuin ini sekarang!"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB ROADMAP -->
+            <div id="roadmap" class="tab-content">
+                <h2 style="color: #667eea; margin-bottom: 20px;">🗺️ Roadmap 90 Hari Menuju Pribadi Asertif</h2>
+
+                <div class="phase-card">
+                    <h3>FASE 1: FONDASI (Minggu 1-4)</h3>
+                    <p style="margin: 10px 0; font-size: 1.1em;"><strong>Fokus:</strong> Kesadaran Diri & Latihan Dasar</p>
+                    
+                    <h4>Minggu 1: Kenali Pola Komunikasi Anda</h4>
+                    <div class="week-item">
+                        <strong>Action:</strong> Catat 3 situasi per hari di mana Anda berkomunikasi (pasif/agresif/asertif)
+                        <p style="margin-top: 8px;"><strong>Target:</strong> Identifikasi pola dominan Anda</p>
+                    </div>
+
+                    <h4>Minggu 2: Latihan "Saya" Statement</h4>
+                    <div class="week-item">
+                        <strong>Action:</strong> Ubah 5 kalimat sehari dari "Kamu membuat saya..." menjadi "Saya merasa... ketika..."
+                        <p style="margin-top: 8px;"><strong>Contoh:</strong> "Saya merasa tidak dihargai ketika pendapat saya diabaikan" (bukan "Kamu selalu mengabaikan saya!")</p>
+                    </div>
+
+                    <h4>Minggu 3: Kontak Mata & Bahasa Tubuh</h4>
+                    <div class="week-item">
+                        <strong>Action:</strong> Dalam setiap percakapan, pertahankan kontak mata 70% waktu, bahu rileks, postur tegak
+                        <p style="margin-top: 8px;"><strong>Latihan:</strong> Praktik di depan cermin 5 menit/hari</p>
+                    </div>
+
+                    <h4>Minggu 4: Mengatakan "Tidak" untuk Hal Kecil</h4>
+                    <div class="week-item">
+                        <strong>Action:</strong> Tolak 1 permintaan kecil per hari dengan sopan
+                        <p style="margin-top: 8px;"><strong>Contoh:</strong> "Maaf, saya tidak bisa meminjamkan pulpen sekarang, saya sedang menggunakannya"</p>
+                    </div>
+                </div>
+
+                <div class="phase-card">
+                    <h3>FASE 2: PENERAPAN (Minggu 5-8)</h3>
+                    <p style="margin: 10px 0; font-size: 1.1em;"><strong>Fokus:</strong> Praktik dalam Situasi Nyata</p>
+                    
+                    <h4>Minggu 5: Menyampaikan Pendapat di Rapat/Diskusi</h4>
+                    <div class="week-item">
+                        <strong>Action:</strong> Minimal 2x seminggu, sampaikan 1 pendapat atau pertanyaan di forum
+                        <p style="margin-top: 8px;"><strong>Target:</strong> Melatih keberanian berbicara di hadapan orang banyak</p>
+                    </div>
+
+                    <h4>Minggu 6: Negosiasi Sederhana</h4>
+                    <div class="week-item">
+                        <strong>Action:</strong> Lakukan 1 negosiasi kecil (harga, deadline, pembagian tugas)
+                        <p style="margin-top: 8px;"><strong>Teknik:</strong> "Saya memahami posisi Anda, namun saya membutuhkan..."</p>
+                    </div>
+
+                    <h4>Minggu 7: Menetapkan Batasan Waktu</h4>
+                    <div class="week-item">
+                        <strong>Action:</strong> Tolak 2 permintaan yang mengganggu prioritas Anda dengan alternatif
+                        <p style="margin-top: 8px;"><strong>Contoh:</strong> "Saya tidak bisa besok, bagaimana kalau Kamis?"</p>
+                    </div>
+
+                    <h4>Minggu 8: Memberikan Feedback Konstruktif</h4>
+                    <div class="week-item">
+                        <strong>Action:</strong> Berikan 1 feedback jujur namun sopan kepada rekan/teman
+                        <p style="margin-top: 8px;"><strong>Formula:</strong> Positif + Area Perbaikan + Solusi</p>
+                    </div>
+                </div>
+
+                <div class="phase-card">
+                    <h3>FASE 3: PENGUATAN (Minggu 9-12)</h3>
+                    <p style="margin: 10px 0; font-size: 1.1em;"><strong>Fokus:</strong> Menghadapi Situasi Sulit</p>
+                    
+                    <h4>Minggu 9: Konflik Ringan</h4>
+                    <div class="week-item">
+                        <strong>Action:</strong> Hadapi 1 ketidaksepakatan dengan teknik "DESC"
+                        <p style="margin-top: 8px;">
+                            <strong>D</strong>eskripsikan situasi<br>
+                            <strong>E</strong>kspresikan perasaan<br>
+                            <strong>S</strong>pesifikkan perubahan yang diinginkan<br>
+                            <strong>C</strong>onsekuensi positif jika perubahan terjadi
+                        </p>
+                    </div>
+
+                    <h4>Minggu 10: Menghadapi Kritik</h4>
+                    <div class="week-item">
+                        <strong>Action:</strong> Terima kritik tanpa defensif
+                        <p style="margin-top: 8px;"><strong>Contoh:</strong> "Terima kasih atas masukannya, saya akan pertimbangkan"</p>
+                        <p><strong>Target:</strong> 3x situasi kritik ditanggapi dengan tenang</p>
+                    </div>
+
+                    <h4>Minggu 11: Meminta Bantuan/Hak</h4>
+                    <div class="week-item">
+                        <strong>Action:</strong> Minta 2 hal yang menjadi hak Anda (informasi, dukungan, waktu)
+                        <p style="margin-top: 8px;"><strong>Contoh:</strong> "Saya butuh informasi lengkap untuk menyelesaikan tugas ini"</p>
+                    </div>
+
+                    <h4>Minggu 12: Evaluasi & Konsistensi</h4>
+                    <div class="week-item">
+                        <strong>Action:</strong> Review jurnal 12 minggu, identifikasi progress dan area yang perlu ditingkatkan
+                        <p style="margin-top: 8px;"><strong>Target:</strong> Buat komitmen untuk mempertahankan perilaku asertif</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB KALENDER -->
+            <div id="kalender" class="tab-content">
+                <h2 style="color: #667eea; margin-bottom: 20px;">📅 Kalender Target Capaian dengan Indikator Terukur</h2>
+
+                <div class="progress-card">
+                    <h3>BULAN 1: FONDASI</h3>
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th>Minggu</th>
+                                <th>Target Utama</th>
+                                <th>Indikator Sukses</th>
+                                <th>Skor (1-10)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1</strong></td>
+                                <td>Jurnal komunikasi</td>
+                                <td>21 situasi tercatat</td>
+                                <td><input type="number" class="score-input" id="month1-week1" min="1" max="10" onchange="saveScore('month1-week1')"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2</strong></td>
+                                <td>"Saya" statement</td>
+                                <td>35 kalimat diubah</td>
+                                <td><input type="number" class="score-input" id="month1-week2" min="1" max="10" onchange="saveScore('month1-week2')"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>3</strong></td>
+                                <td>Bahasa tubuh</td>
+                                <td>Kontak mata konsisten dalam 80% percakapan</td>
+                                <td><input type="number" class="score-input" id="month1-week3" min="1" max="10" onchange="saveScore('month1-week3')"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>4</strong></td>
+                                <td>Menolak permintaan</td>
+                                <td>7 penolakan sopan berhasil</td>
+                                <td><input type="number" class="score-input" id="month1-week4" min="1" max="10" onchange="saveScore('month1-week4')"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 15px; font-weight: 600; color: #495057;">Target Akhir Bulan 1: Skor rata-rata minimal 7/10</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="month1-progress" style="width: 0%">0%</div>
+                    </div>
+                </div>
+
+                <div class="progress-card">
+                    <h3>BULAN 2: PENERAPAN</h3>
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th>Minggu</th>
+                                <th>Target Utama</th>
+                                <th>Indikator Sukses</th>
+                                <th>Skor (1-10)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>5</strong></td>
+                                <td>Pendapat di forum</td>
+                                <td>2+ pendapat disampaikan</td>
+                                <td><input type="number" class="score-input" id="month2-week1" min="1" max="10" onchange="saveScore('month2-week1')"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>6</strong></td>
+                                <td>Negosiasi</td>
+                                <td>1 negosiasi berhasil mencapai kompromi</td>
+                                <td><input type="number" class="score-input" id="month2-week2" min="1" max="10" onchange="saveScore('month2-week2')"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>7</strong></td>
+                                <td>Batasan waktu</td>
+                                <td>2 permintaan ditolak dengan alternatif</td>
+                                <td><input type="number" class="score-input" id="month2-week3" min="1" max="10" onchange="saveScore('month2-week3')"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>8</strong></td>
+                                <td>Feedback konstruktif</td>
+                                <td>1 feedback diberikan & diterima baik</td>
+                                <td><input type="number" class="score-input" id="month2-week4" min="1" max="10" onchange="saveScore('month2-week4')"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 15px; font-weight: 600; color: #495057;">Target Akhir Bulan 2: Skor rata-rata minimal 7.5/10</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="month2-progress" style="width: 0%">0%</div>
+                    </div>
+                </div>
+
+                <div class="progress-card">
+                    <h3>BULAN 3: PENGUATAN</h3>
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th>Minggu</th>
+                                <th>Target Utama</th>
+                                <th>Indikator Sukses</th>
+                                <th>Skor (1-10)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>9</strong></td>
+                                <td>Konflik ringan</td>
+                                <td>1 konflik diselesaikan dengan DESC</td>
+                                <td><input type="number" class="score-input" id="month3-week1" min="1" max="10" onchange="saveScore('month3-week1')"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>10</strong></td>
+                                <td>Terima kritik</td>
+                                <td>3 kritik ditanggapi tanpa defensif</td>
+                                <td><input type="number" class="score-input" id="month3-week2" min="1" max="10" onchange="saveScore('month3-week2')"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>11</strong></td>
+                                <td>Minta hak</td>
+                                <td>2 permintaan hak disampaikan</td>
+                                <td><input type="number" class="score-input" id="month3-week3" min="1" max="10" onchange="saveScore('month3-week3')"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>12</strong></td>
+                                <td>Evaluasi total</td>
+                                <td>Peningkatan 50% dari baseline minggu 1</td>
+                                <td><input type="number" class="score-input" id="month3-week4" min="1" max="10" onchange="saveScore('month3-week4')"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 15px; font-weight: 600; color: #495057;">Target Akhir Bulan 3: Skor rata-rata minimal 8/10</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="month3-progress" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB PROGRESS -->
+            <div id="progress" class="tab-content">
+                <h2 style="color: #667eea; margin-bottom: 20px;">📊 Sistem Penilaian Progress</h2>
+
+                <div class="progress-card">
+                    <h3>📈 Progress Keseluruhan</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4 id="totalScore">0</h4>
+                            <p>Total Skor</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 id="avgScore">0</h4>
+                            <p>Rata-rata</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 id="completionRate">0%</h4>
+                            <p>Tingkat Penyelesaian</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 id="weeksCompleted">0/12</h4>
+                            <p>Minggu Dinilai</p>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">Progress Per Fase</h3>
+                    <div style="margin: 20px 0;">
+                        <p style="margin-bottom: 10px; font-weight: 600;">Fase 1: Fondasi (Minggu 1-4)</p>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="phase1-progress" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+                    <div style="margin: 20px 0;">
+                        <p style="margin-bottom: 10px; font-weight: 600;">Fase 2: Penerapan (Minggu 5-8)</p>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="phase2-progress" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+                    <div style="margin: 20px 0;">
+                        <p style="margin-bottom: 10px; font-weight: 600;">Fase 3: Penguatan (Minggu 9-12)</p>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="phase3-progress" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-card">
+                    <h3>🎯 Indikator Sukses yang Terlihat</h3>
+                    
+                    <div id="success1" class="success-indicator pending">
+                        <span><strong>Bulan 1:</strong> Anda tidak lagi merasa bersalah saat menolak permintaan tidak penting</span>
+                    </div>
+                    
+                    <div id="success2" class="success-indicator pending">
+                        <span><strong>Bulan 2:</strong> Rekan kerja/teman mulai meminta pendapat Anda lebih sering</span>
+                    </div>
+                    
+                    <div id="success3" class="success-indicator pending">
+                        <span><strong>Bulan 3:</strong> Anda merasa lebih tenang dan percaya diri dalam komunikasi sehari-hari</span>
+                    </div>
+                </div>
+
+                <div class="action-box">
+                    <h3>💡 Tips Meningkatkan Skor</h3>
+                    <p>Jika skor Anda di bawah target, jangan berkecil hati! Ini adalah proses pembelajaran. Coba ulangi aktivitas minggu tersebut, minta dukungan dari teman atau keluarga, dan ingat bahwa setiap usaha kecil adalah kemajuan.</p>
+                    <button class="btn" onclick="resetProgress()">Reset Semua Progress</button>
+                    <button class="btn btn-secondary" onclick="exportData()">Ekspor Data Anda</button>
+                </div>
+            </div>
+
+            <!-- TAB EVALUASI -->
+            <div id="evaluasi" class="tab-content">
+                <h2 style="color: #667eea; margin-bottom: 20px;">✅ Evaluasi Mingguan</h2>
+
+                <div class="intro-section">
+                    <h2>Cara Menggunakan Evaluasi Mingguan</h2>
+                    <p>Setiap akhir minggu, luangkan 10-15 menit untuk mengevaluasi diri Anda dengan menjawab 4 pertanyaan berikut. Berikan nilai 1-10 untuk setiap aspek, kemudian hitung rata-ratanya.</p>
+                </div>
+
+                <div class="evaluation-form">
+                    <h3 style="color: #667eea; margin-bottom: 20px;">Minggu ke: <input type="number" id="evalWeek" min="1" max="12" value="1" style="width: 60px; padding: 5px; border: 2px solid #667eea; border-radius: 5px;"></h3>
+                    
+                    <div class="evaluation-question">
+                        <label>1. Frekuensi: Seberapa sering saya berhasil melakukan target minggu ini?</label>
+                        <div class="slider-container">
+                            <input type="range" min="1" max="10" value="5" class="slider" id="freq-slider">
+                            <span class="slider-value" id="freq-value">5</span>
+                        </div>
+                    </div>
+
+                    <div class="evaluation-question">
+                        <label>2. Kualitas: Seberapa nyaman saya saat melakukannya?</label>
+                        <div class="slider-container">
+                            <input type="range" min="1" max="10" value="5" class="slider" id="quality-slider">
+                            <span class="slider-value" id="quality-value">5</span>
+                        </div>
+                    </div>
+
+                    <div class="evaluation-question">
+                        <label>3. Dampak: Apakah orang lain merespons positif?</label>
+                        <div class="slider-container">
+                            <input type="range" min="1" max="10" value="5" class="slider" id="impact-slider">
+                            <span class="slider-value" id="impact-value">5</span>
+                        </div>
+                    </div>
+
+                    <div class="evaluation-question">
+                        <label>4. Konsistensi: Apakah saya melakukannya tanpa dipaksa?</label>
+                        <div class="slider-container">
+                            <input type="range" min="1" max="10" value="5" class="slider" id="consistency-slider">
+                            <span class="slider-value" id="consistency-value">5</span>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 30px; padding: 20px; background: white; border-radius: 10px;">
+                        <h3 style="color: #667eea;">Rata-rata Skor Minggu Ini:</h3>
+                        <h2 id="weeklyAverage" style="font-size: 3em; color: #764ba2; margin: 10px 0;">5.0</h2>
+                        <button class="btn" onclick="saveWeeklyEvaluation()">💾 Simpan Evaluasi Minggu Ini</button>
+                    </div>
+                </div>
+
+                <div class="progress-card">
+                    <h3>📝 Catatan & Refleksi Mingguan</h3>
+                    <textarea id="weeklyNotes" style="width: 100%; min-height: 150px; padding: 15px; border: 2px solid #dee2e6; border-radius: 10px; font-size: 1em; font-family: inherit;" placeholder="Tulis refleksi Anda tentang minggu ini:
+- Apa yang berhasil?
+- Apa tantangan terbesar?
+- Apa yang akan Anda perbaiki minggu depan?"></textarea>
+                    <button class="btn" style="margin-top: 15px;" onclick="saveNotes()">💾 Simpan Catatan</button>
+                </div>
+
+                <div class="motivational-quote">
+                    "Progress, bukan perfeksi! Setiap minggu adalah kesempatan baru untuk tumbuh. 🌱"
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>💪 Ingat: Asertif bukan berarti sempurna!</strong></p>
+            <p>Ini tentang progress, bukan kesempurnaan. Setiap langkah kecil adalah kemenangan.</p>
+            <p style="margin-top: 15px; color: #667eea;">Bagikan aplikasi ini ke teman-teman Anda agar mereka juga bisa berkembang! 🚀</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">© 2026 Program Menjadi Pribadi Asertif - Untuk Peningkatan Kualitas Diri</p>
+        </div>
+    </div>
+
+    <script>
+        // Tab navigation
+        function openTab(tabName) {
+            const tabs = document.getElementsByClassName('tab-content');
+            const navTabs = document.getElementsByClassName('nav-tab');
+            
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            
+            for (let i = 0; i < navTabs.length; i++) {
+                navTabs[i].classList.remove('active');
+            }
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            
+            if (tabName === 'progress') {
+                updateAllProgress();
+            }
+        }
+
+        // Save score to localStorage
+        function saveScore(inputId) {
+            const value = document.getElementById(inputId).value;
+            if (value >= 1 && value <= 10) {
+                localStorage.setItem(inputId, value);
+                updateAllProgress();
+            }
+        }
+
+        // Load scores from localStorage
+        function loadScores() {
+            const months = ['month1', 'month2', 'month3'];
+            months.forEach(month => {
+                for (let i = 1; i <= 4; i++) {
+                    const inputId = `${month}-week${i}`;
+                    const savedValue = localStorage.getItem(inputId);
+                    if (savedValue) {
+                        const input = document.getElementById(inputId);
+                        if (input) input.value = savedValue;
+                    }
+                }
+            });
+            updateAllProgress();
+        }
+
+        // Update all progress bars and stats
+        function updateAllProgress() {
+            const months = [
+                { id: 'month1', target: 7 },
+                { id: 'month2', target: 7.5 },
+                { id: 'month3', target: 8 }
+            ];
+
+            let totalScore = 0;
+            let totalWeeks = 0;
+            let completedWeeks = 0;
+
+            months.forEach((month, monthIndex) => {
+                let monthTotal = 0;
+                let monthCount = 0;
+
+                for (let i = 1; i <= 4; i++) {
+                    const inputId = `${month.id}-week${i}`;
+                    const value = parseFloat(document.getElementById(inputId)?.value || 0);
+                    
+                    if (value > 0) {
+                        monthTotal += value;
+                        monthCount++;
+                        totalScore += value;
+                        totalWeeks++;
+                        completedWeeks++;
+                    }
+                }
+
+                const monthAvg = monthCount > 0 ? (monthTotal / monthCount) : 0;
+                const monthProgress = monthCount > 0 ? ((monthAvg / 10) * 100) : 0;
+                
+                const progressBar = document.getElementById(`${month.id}-progress`);
+                if (progressBar) {
+                    progressBar.style.width = monthProgress + '%';
+                    progressBar.textContent = monthProgress.toFixed(0) + '%';
+                }
+
+                // Update phase progress
+                const phaseProgress = document.getElementById(`phase${monthIndex + 1}-progress`);
+                if (phaseProgress) {
+                    phaseProgress.style.width = monthProgress + '%';
+                    phaseProgress.textContent = monthProgress.toFixed(0) + '%';
+                }
+            });
+
+            const overallAvg = totalWeeks > 0 ? (totalScore / totalWeeks) : 0;
+            const completionRate = (completedWeeks / 12) * 100;
+
+            // Update stats
+            document.getElementById('totalScore').textContent = totalScore.toFixed(1);
+            document.getElementById('avgScore').textContent = overallAvg.toFixed(1);
+            document.getElementById('completionRate').textContent = completionRate.toFixed(0) + '%';
+            document.getElementById('weeksCompleted').textContent = completedWeeks + '/12';
+            
+            // Update beranda stats
+            document.getElementById('completedWeeks').textContent = completedWeeks;
+            document.getElementById('averageScore').textContent = overallAvg.toFixed(1);
+            document.getElementById('progressPercent').textContent = completionRate.toFixed(0) + '%';
+
+            // Update success indicators
+            updateSuccessIndicators(completedWeeks, overallAvg);
+        }
+
+        // Update success indicators based on progress
+        function updateSuccessIndicators(weeks, avgScore) {
+            const success1 = document.getElementById('success1');
+            const success2 = document.getElementById('success2');
+            const success3 = document.getElementById('success3');
+
+            if (weeks >= 4 && avgScore >= 7) {
+                success1.classList.remove('pending');
+            } else {
+                success1.classList.add('pending');
+            }
+
+            if (weeks >= 8 && avgScore >= 7.5) {
+                success2.classList.remove('pending');
+            } else {
+                success2.classList.add('pending');
+            }
+
+            if (weeks >= 12 && avgScore >= 8) {
+                success3.classList.remove('pending');
+            } else {
+                success3.classList.add('pending');
+            }
+        }
+
+        // Slider value updates
+        const sliders = ['freq', 'quality', 'impact', 'consistency'];
+        sliders.forEach(slider => {
+            const sliderElement = document.getElementById(`${slider}-slider`);
+            const valueElement = document.getElementById(`${slider}-value`);
+            
+            if (sliderElement && valueElement) {
+                sliderElement.addEventListener('input', function() {
+                    valueElement.textContent = this.value;
+                    updateWeeklyAverage();
+                });
+            }
+        });
+
+        // Update weekly average
+        function updateWeeklyAverage() {
+            const freq = parseFloat(document.getElementById('freq-slider').value);
+            const quality = parseFloat(document.getElementById('quality-slider').value);
+            const impact = parseFloat(document.getElementById('impact-slider').value);
+            const consistency = parseFloat(document.getElementById('consistency-slider').value);
+            
+            const average = ((freq + quality + impact + consistency) / 4).toFixed(1);
+            document.getElementById('weeklyAverage').textContent = average;
+        }
+
+        // Save weekly evaluation
+        function saveWeeklyEvaluation() {
+            const week = document.getElementById('evalWeek').value;
+            const average = document.getElementById('weeklyAverage').textContent;
+            
+            // Determine which month and week
+            let monthId, weekNum;
+            if (week <= 4) {
+                monthId = 'month1';
+                weekNum = week;
+            } else if (week <= 8) {
+                monthId = 'month2';
+                weekNum = week - 4;
+            } else {
+                monthId = 'month3';
+                weekNum = week - 8;
+            }
+            
+            const inputId = `${monthId}-week${weekNum}`;
+            const input = document.getElementById(inputId);
+            if (input) {
+                input.value = Math.round(parseFloat(average));
+                saveScore(inputId);
+            }
+            
+            alert(`✅ Evaluasi minggu ${week} berhasil disimpan dengan skor ${average}!`);
+        }
+
+        // Save notes
+        function saveNotes() {
+            const week = document.getElementById('evalWeek').value;
+            const notes = document.getElementById('weeklyNotes').value;
+            localStorage.setItem(`notes-week${week}`, notes);
+            alert('✅ Catatan berhasil disimpan!');
+        }
+
+        // Load notes
+        function loadNotes() {
+            const week = document.getElementById('evalWeek').value;
+            const savedNotes = localStorage.getItem(`notes-week${week}`);
+            if (savedNotes) {
+                document.getElementById('weeklyNotes').value = savedNotes;
+            } else {
+                document.getElementById('weeklyNotes').value = '';
+            }
+        }
+
+        // Watch for week number change
+        document.getElementById('evalWeek')?.addEventListener('change', loadNotes);
+
+        // Reset progress
+        function resetProgress() {
+            if (confirm('⚠️ Apakah Anda yakin ingin mereset semua progress? Tindakan ini tidak dapat dibatalkan!')) {
+                localStorage.clear();
+                location.reload();
+            }
+        }
+
+        // Export data
+        function exportData() {
+            const data = {
+                scores: {},
+                notes: {}
+            };
+            
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                data.scores[key] = localStorage.getItem(key);
+            }
+            
+            const dataStr = JSON.stringify(data, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'asertif-progress-data.json';
+            link.click();
+            
+            alert('✅ Data Anda telah diunduh!');
+        }
+
+        // Initialize on page load
+        window.onload = function() {
+            loadScores();
+            loadNotes();
+            updateWeeklyAverage();
+        };
+    </script>
+</body>
+</html>
