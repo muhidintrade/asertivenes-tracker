@@ -158,14 +158,22 @@
             font-size: 1.1em;
         }
 
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
         .calendar-table {
             width: 100%;
+            min-width: 600px;
             border-collapse: collapse;
-            margin: 20px 0;
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .calendar-table th {
@@ -436,6 +444,19 @@
 
             .stats-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .table-wrapper::after {
+                content: "← Geser untuk melihat lebih →";
+                display: block;
+                text-align: center;
+                color: #667eea;
+                font-size: 0.9em;
+                font-weight: 600;
+                padding: 10px;
+                background: linear-gradient(90deg, transparent, #f8f9fa 20%, #f8f9fa 80%, transparent);
+                margin-top: 10px;
+                border-radius: 5px;
             }
         }
 
@@ -708,6 +729,7 @@
 
                 <div class="progress-card">
                     <h3>BULAN 1: FONDASI</h3>
+                    <div class="table-wrapper">
                     <table class="calendar-table">
                         <thead>
                             <tr>
@@ -744,6 +766,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    </div>
                     <p style="margin-top: 15px; font-weight: 600; color: #495057;">Target Akhir Bulan 1: Skor rata-rata minimal 7/10</p>
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="month1-progress" style="width: 0%">0%</div>
@@ -752,6 +775,7 @@
 
                 <div class="progress-card">
                     <h3>BULAN 2: PENERAPAN</h3>
+                    <div class="table-wrapper">
                     <table class="calendar-table">
                         <thead>
                             <tr>
@@ -788,6 +812,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    </div>
                     <p style="margin-top: 15px; font-weight: 600; color: #495057;">Target Akhir Bulan 2: Skor rata-rata minimal 7.5/10</p>
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="month2-progress" style="width: 0%">0%</div>
@@ -796,6 +821,7 @@
 
                 <div class="progress-card">
                     <h3>BULAN 3: PENGUATAN</h3>
+                    <div class="table-wrapper">
                     <table class="calendar-table">
                         <thead>
                             <tr>
@@ -832,6 +858,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    </div>
                     <p style="margin-top: 15px; font-weight: 600; color: #495057;">Target Akhir Bulan 3: Skor rata-rata minimal 8/10</p>
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="month3-progress" style="width: 0%">0%</div>
